@@ -1,0 +1,22 @@
+const express = require('express');
+const app = express();
+const users = require('./routes/api/users');
+const profile = require('./routes/api/profile');
+const plants = require('./routes/api/plants');
+const mongoose = require('mongoose');
+
+//Configure MongoDB Database
+const db = require('./config/keys').mongoURI;
+
+mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => console.log('MongoDB connected')).catch(err => console.log(err));
+
+app.get('/', (req, res) => res.send('Hello World'));
+
+app.use('/api/users', users);
+
+app.use('/api/profile', profile);
+
+app.use('/api/plants', plants);
+
+const port = 5007;
+app.listen(port, () => console.log((`App is running on port ${port}`)));
