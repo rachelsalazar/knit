@@ -4,8 +4,13 @@ const users = require('./routes/api/users');
 const profile = require('./routes/api/profile');
 const plants = require('./routes/api/plants');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
-//Configure MongoDB Database
+// Bringing in body-parser for URL encoding and json
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+// Configure MongoDB Database
 const db = require('./config/keys').mongoURI;
 
 mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => console.log('MongoDB connected')).catch(err => console.log(err));
