@@ -1,5 +1,8 @@
-# knit
-The millennial's knitting website, it's cool.
+# Plants Tracker
+Keep track of your plants and their needs.
 
-A beautifully designed, fun to use knitting resource for stylish knitters.
-
+Login securely with email and password.
+Create profile.
+Search for plants in database.
+Add plants to your plants to keep track of each one's specific needs.
+Add images of plants, give plants unique names.
